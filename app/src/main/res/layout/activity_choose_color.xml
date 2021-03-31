@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChooseColorActivity"
+    android:padding="10dp">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".4"/>
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/vsmart_live_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/h_guideline"
+        app:layout_constraintEnd_toEndOf="@id/v_guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Điện Thoại Vsmart Joy 3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/v_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
+        android:textColor="#000"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/des"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Hàng chính hãng"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        app:layout_constraintStart_toEndOf="@id/v_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
+        android:textColor="#000"/>
+    <TextView
+        android:id="@+id/color_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Màu: "
+        app:layout_constraintTop_toBottomOf="@id/des"
+        app:layout_constraintStart_toEndOf="@id/v_guideline"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:visibility="invisible"/>
+    <TextView
+        android:id="@+id/color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đỏ"
+        app:layout_constraintTop_toTopOf="@+id/color_label"
+        app:layout_constraintBottom_toBottomOf="@id/color_label"
+        app:layout_constraintStart_toEndOf="@id/color_label"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/supplier_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cung cấp bởi: "
+        app:layout_constraintTop_toBottomOf="@id/color_label"
+        app:layout_constraintStart_toEndOf="@id/v_guideline"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:visibility="invisible"/>
+    <TextView
+        android:id="@+id/supplier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tiki Tradding"
+        app:layout_constraintTop_toTopOf="@+id/supplier_label"
+        app:layout_constraintBottom_toBottomOf="@id/supplier_label"
+        app:layout_constraintStart_toEndOf="@id/supplier_label"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1.790.000 đ"
+        app:layout_constraintTop_toBottomOf="@id/supplier_label"
+        app:layout_constraintStart_toEndOf="@id/v_guideline"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:visibility="invisible"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/h_guideline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chọn một màu bên dưới:"
+            android:layout_marginBottom="10dp"
+            android:textColor="#000"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/rb_black"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#000"
+            android:layout_marginBottom="20dp"/>
+        <Button
+            android:id="@+id/rb_white"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#86B8CC"
+            android:layout_marginBottom="20dp"/>
+        <Button
+            android:id="@+id/rb_blue"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#0048FF"
+            android:layout_marginBottom="20dp"/>
+        <Button
+            android:id="@+id/rb_red"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#FF1400"
+            android:layout_marginBottom="20dp"/>
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btnXong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="XONG"
+        android:background="#2196F3"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
