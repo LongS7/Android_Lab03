@@ -18,13 +18,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ((Button)findViewById(R.id.btn_chon_mau)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ChooseColorActivity.class);
+        findViewById(R.id.btn_chon_mau).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ChooseColorActivity.class);
 
-                startActivityForResult(intent, 13);
-            }
+            startActivityForResult(intent, 13);
         });
     }
 

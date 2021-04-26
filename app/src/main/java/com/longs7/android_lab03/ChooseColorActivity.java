@@ -10,10 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ChooseColorActivity extends AppCompatActivity {
-    private Button btnBlack;
-    private Button btnBlue;
-    private Button btnRed;
-    private Button btnBac;
 
     private ImageView imgImage;
     private TextView tvColor;
@@ -31,65 +27,42 @@ public class ChooseColorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_color);
 
-        blackPhone = new PhoneColor(R.drawable.vsmart_black, "Đen", "Tiki trading", "1.790.000 đ");
-        bluePhone = new PhoneColor(R.drawable.vsmart_live_blue, "Xanh", "Tiki trading", "1.790.000 đ");
-        whitePhone = new PhoneColor(R.drawable.vs_bac, "Trắng", "Tiki trading", "1.790.000 đ");
-        redPhone = new PhoneColor(R.drawable.vs_red, "Đỏ", "Tiki trading", "1.790.000 đ");
+        blackPhone = new PhoneColor(R.drawable.vsmart_black, "Đen", "Tiki Trading", "1.790.000 đ");
+        bluePhone = new PhoneColor(R.drawable.vsmart_live_blue, "Xanh", "Tiki Trading", "1.790.000 đ");
+        whitePhone = new PhoneColor(R.drawable.vs_bac, "Trắng", "Tiki Ttrading", "1.790.000 đ");
+        redPhone = new PhoneColor(R.drawable.vs_red, "Đỏ", "Tiki Ttrading", "1.790.000 đ");
 
         imgImage = findViewById(R.id.image);
         tvColor = findViewById(R.id.color);
         tvSupplier = findViewById(R.id.supplier);
         tvPrice = findViewById(R.id.price);
 
-        btnBlack = findViewById(R.id.rb_black);
-        btnBlack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                changeColor("Black");
-            }
-        });
+        Button btnBlack = findViewById(R.id.rb_black);
+        btnBlack.setOnClickListener(v -> changeColor("Black"));
 
-        btnBlue = findViewById(R.id.rb_blue);
-        btnBlue.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                changeColor("Blue");
-            }
-        });
+        Button btnBlue = findViewById(R.id.rb_blue);
+        btnBlue.setOnClickListener(v -> changeColor("Blue"));
 
-        btnRed = findViewById(R.id.rb_red);
-        btnRed.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                changeColor("Red");
-            }
-        });
+        Button btnRed = findViewById(R.id.rb_red);
+        btnRed.setOnClickListener(v -> changeColor("Red"));
 
-        btnBac = findViewById(R.id.rb_white);
-        btnBac.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                changeColor("White");
-            }
-        });
+        Button btnBac = findViewById(R.id.rb_white);
+        btnBac.setOnClickListener(v -> changeColor("White"));
 
-        ((Button)findViewById(R.id.btnXong)).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ChooseColorActivity.this, ChooseColorActivity.class);
+        findViewById(R.id.btnXong).setOnClickListener(v -> {
+            Intent intent = new Intent(ChooseColorActivity.this, ChooseColorActivity.class);
 
-                Bundle bundle = new Bundle();
-                bundle.putInt("image", selectedPhone.getImage());
-                bundle.putString("color", selectedPhone.getColor());
-                bundle.putString("supplier", selectedPhone.getSupplier());
-                bundle.putString("price", selectedPhone.getPrice());
+            Bundle bundle = new Bundle();
+            bundle.putInt("image", selectedPhone.getImage());
+            bundle.putString("color", selectedPhone.getColor());
+            bundle.putString("supplier", selectedPhone.getSupplier());
+            bundle.putString("price", selectedPhone.getPrice());
 
-                intent.putExtra("result", bundle);
+            intent.putExtra("result", bundle);
 
-                setResult(13, intent);
+            setResult(13, intent);
 
-                finish();
-            }
+            finish();
         });
     }
 
